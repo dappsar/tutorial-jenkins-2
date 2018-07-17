@@ -35,7 +35,7 @@ public class HolaControllerTest {
 	.andExpect(status().is3xxRedirection())
 	.andExpect(header().string("Location", "/hola"));
     }
-    
+
     @Test
     public void holaSinParametros() throws Exception {
 	mockMvc.perform(get("/hola"))
@@ -46,7 +46,7 @@ public class HolaControllerTest {
 	.andExpect(content().string(containsString("¡Hola Mundo!")))
 	;
     }
-    
+
     @Test
     public void holaDavid() throws Exception {
 	mockMvc.perform(get("/hola?nombre=David"))
@@ -54,7 +54,7 @@ public class HolaControllerTest {
 	.andExpect(view().name("hola"))
 	.andExpect(model().attributeExists("nombre"))
 	.andExpect(model().attribute("nombre", is("David")))
-	.andExpect(content().string(containsString("¡Hola David!a")))
+	.andExpect(content().string(containsString("¡Hola David!")))
 	;
     }
 
