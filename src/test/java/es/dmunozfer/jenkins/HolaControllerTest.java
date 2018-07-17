@@ -47,6 +47,7 @@ public class HolaControllerTest {
 	;
     }
 
+	/*
     @Test
     public void holaDavid() throws Exception {
 	mockMvc.perform(get("/hola?nombre=David"))
@@ -56,6 +57,7 @@ public class HolaControllerTest {
 	.andExpect(model().attribute("nombre", is("David")))
 	.andExpect(content().string(containsString("¡Hola David!")))
 	;
-    }
+	}
+	*/
 
 }
