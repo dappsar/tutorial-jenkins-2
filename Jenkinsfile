@@ -35,7 +35,7 @@ node {
    //   if (currentBuild.result == 'UNSTABLE')
    //      currentBuild.result = 'SUCCESS'
    //   throw err
-   }
+   //}
 
    // ------------------------------------
    // -- ETAPA: Instalar
