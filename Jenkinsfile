@@ -32,9 +32,9 @@ node {
       step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
    }catch(err) {
       step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-      //if (currentBuild.result == 'UNSTABLE')
-      //   currentBuild.result = 'FAILURE'
-      //throw err
+      if (currentBuild.result == 'UNSTABLE')
+         currentBuild.result = 'SUCCESS'
+      throw err
    }
 
    // ------------------------------------
@@ -42,6 +42,7 @@ node {
    // ------------------------------------
    stage 'Instalar'
    echo 'Instala el paquete generado en el repositorio maven'
+   currentBuild.result = 'SUCCESS'
    sh 'mvn install -Dmaven.test.skip=true'
 
    // ------------------------------------
