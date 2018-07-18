@@ -29,6 +29,7 @@ public class HolaControllerTest {
 	mockMvc = MockMvcBuilders.webAppContextSetup(webContext).build();
     }
 
+	/*
     @Test
     public void raiz() throws Exception {
 	mockMvc.perform(get("/"))
@@ -45,7 +46,8 @@ public class HolaControllerTest {
 	.andExpect(model().attribute("nombre", is("Mundo")))
 	.andExpect(content().string(containsString("¡Hola Mundo!")))
 	;
-    }
+	}
+	*/
 
 	/*
     @Test
