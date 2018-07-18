@@ -34,7 +34,7 @@ node {
       step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
       if (currentBuild.result == 'UNSTABLE')
          currentBuild.result = 'SUCCESS'
-      throw err
+   //   throw err
    }
 
    // ------------------------------------
