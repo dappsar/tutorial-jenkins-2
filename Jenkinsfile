@@ -42,7 +42,6 @@ node {
    // ------------------------------------
    stage 'Instalar'
    echo 'Instala el paquete generado en el repositorio maven'
-   currentBuild.result = 'SUCCESS'
    sh 'mvn install -Dmaven.test.skip=true'
 
    // ------------------------------------
@@ -51,4 +50,5 @@ node {
    stage 'Archivar'
    echo 'Archiva el paquete el paquete generado en Jenkins'
    step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
+   currentBuild.result = 'SUCCESS'
 }
